@@ -1,0 +1,175 @@
+.app {
+    border: solid;
+    min-width: 1300px;
+    margin: 50px 80px;
+    border-radius: 12px;
+    background-image: url(sunny.jpg);
+    background-repeat: no-repeat;
+    background-position: 0%;
+    background-size: cover;
+}
+
+.container {
+    display: block;
+    min-width: fit-content;
+}
+
+.circleOne {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    text-align: center;
+    background: rgba(158, 165, 177, 0.4);
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+.circleTwo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    text-align: center;
+    background: rgba(112, 159, 239, 0.4);
+    margin-top: 0px;
+}
+
+.circleThree {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    text-align: center;
+    background: rgba(237, 168, 95, 0.4);
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+.circleFour {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    text-align: center;
+    background: rgba(88, 237, 253, 0.4);
+    margin-top: 0px;
+}
+
+.circleFive {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    text-align: center;
+    background: rgba(237, 168, 95, 0.4);
+    margin-top: 0px;
+    margin-right: 40px;
+}
+
+.emoji {
+    font-size: 70px;
+    margin-bottom: 0px;
+}
+
+.day {
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+p {
+    font-size: 22px;
+    margin: 0 auto;
+    font-family: "Koulen";
+}
+
+.high {
+    color: red;
+    font-size: 25px;
+}
+
+.low {
+    color: blue;
+    font-size: 25px;
+}
+
+.bigArrow {
+    max-width: max-content;
+    margin-left: 80px;
+    margin-top: 30px;
+}
+
+.red {
+    font-size: 90px;
+    color: red;
+}
+
+.blue {
+    font-size: 90px;
+    color: blue;
+}
+
+.table {
+    max-width: max-content;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+.tableTwo {
+    list-style: none;
+    padding: 20px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    font-size: 20px;
+    font-family: "Koulen";
+}
+
+.row {
+    margin-top: 50px;
+    margin-left: 0px;
+    min-width: max-content;
+}
+
+.time {
+    border-color: none;
+    max-width: fit-content;
+    margin-left: 0px;
+    font-size: 25px;
+}
+
+.city {
+    margin-left: 320px;
+}
+
+.location {
+    padding-left: 30px;
+}
+
+.cityName {
+    font-size: 50px;
+    font-family: "Koulen";
+    margin: 0px 100px;
+}
+
+.temp {
+    font-size: 47px;
+    margin-left: 105px;
+    font-family: "Koulen";
+}
+
+.mostly {
+    font-size: 37px;
+    margin-left: 90px;
+    font-family: "Koulen";
+}
+
+.highOne {
+    font-size: 34px;
+    color: red;
+    padding-left: 10px;
+}
+
+.lowOne {
+    font-size: 34px;
+    color: blue;
+    padding-left: 12px;
+}
+
+span.celcius {
+    font-size: 37px;
+}
