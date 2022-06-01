@@ -1,7 +1,7 @@
 .app {
     border: solid;
     min-width: 1300px;
-    margin: 50px 80px;
+    margin: 50px 80px 0px;
     border-radius: 12px;
     background-image: url(sunny.jpg);
     background-repeat: no-repeat;
@@ -172,4 +172,11 @@ p {
 
 span.celcius {
     font-size: 37px;
+}
+
+.link {
+    color: rgba(128, 128, 128, 0.653);
+    font-size: 22px;
+    margin-left: 80px;
+    margin-top: 10px;
 }
