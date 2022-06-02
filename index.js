@@ -46,7 +46,7 @@ function showTemperature(response) {
     let min = Math.round(response.data.main.temp_min);
     let mintemp = document.querySelector(".lowOne");
     mintemp.innerHTML = `${min}°C`;
-    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/10d@2x.png`);
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function searchCity(city) {
