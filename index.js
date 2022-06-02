@@ -24,7 +24,9 @@ let days = [
 ];
 
 realTime.innerHTML = `${days[day]}, ${hours}:${minutes}`;
+
 function showTemperature(response) {
+    console.log(response.data);
     let h1 = document.querySelector(".cityName");
     h1.innerHTML = `${response.data.name}`;
     console.log(response.data);
@@ -44,6 +46,7 @@ function showTemperature(response) {
     let min = Math.round(response.data.main.temp_min);
     let mintemp = document.querySelector(".lowOne");
     mintemp.innerHTML = `${min}°C`;
+    iconElement.innerHTML = ` http://openweathermap.org/img/wn/10d@2x.png`;
 }
 
 function searchCity(city) {
