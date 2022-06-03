@@ -26,7 +26,6 @@ let days = [
 realTime.innerHTML = `${days[day]}, ${hours}:${minutes}`;
 
 function showTemperature(response) {
-    console.log(response.data);
     let h1 = document.querySelector(".cityName");
     h1.innerHTML = `${response.data.name}`;
     console.log(response.data);
@@ -46,9 +45,13 @@ function showTemperature(response) {
     let min = Math.round(response.data.main.temp_min);
     let mintemp = document.querySelector(".lowOne");
     mintemp.innerHTML = `${min}°C`;
-    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    iconElement.setAttribute("alt", response.data.weather[0].description);
+    let showIcone = document.querySelector("#sun");
+    showIcone.setAttribute = ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+
+
 }
+
 
 function searchCity(city) {
     let apiKey = "08638797b25b0ee2dd5b1bbc8fde3b75";
