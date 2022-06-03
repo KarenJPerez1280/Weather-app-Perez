@@ -31,7 +31,7 @@ function showTemperature(response) {
     console.log(response.data);
     let temp = Math.round(response.data.main.temp);
     let tempFarenheit = document.querySelector(".farenheit");
-    tempFarenheit.innerHTML = `${temp}°C`;
+    tempFarenheit.innerHTML = `${temp}°F`;
     let description = document.querySelector(".mostly");
     description.innerHTML = response.data.weather[0].description;
     let windspeed = Math.round(response.data.wind.speed);
@@ -39,12 +39,13 @@ function showTemperature(response) {
     wind.innerHTML = `Wind Speed: ${windspeed} mph`;
     let humidity = document.querySelector("#humidity");
     humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
+    farenheitValue = response.data.main.temp;
     let max = Math.round(response.data.main.temp_max);
     let maxtemp = document.querySelector(".highOne");
-    maxtemp.innerHTML = `${max}°C`;
+    maxtemp.innerHTML = `${max}°F`;
     let min = Math.round(response.data.main.temp_min);
     let mintemp = document.querySelector(".lowOne");
-    mintemp.innerHTML = `${min}°C`;
+    mintemp.innerHTML = `${min}°F`;
     let showIcone = document.querySelector("#sun");
     showIcone.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
@@ -52,7 +53,7 @@ function showTemperature(response) {
 
 function searchCity(city) {
     let apiKey = "08638797b25b0ee2dd5b1bbc8fde3b75";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(showTemperature);
 }
 
@@ -68,7 +69,7 @@ searchForm.addEventListener("submit", inputCity);
 function getPosition(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
-    let units = "metric";
+    let units = "imperial";
     let apiKey = "08638797b25b0ee2dd5b1bbc8fde3b75";
     let url = "https://api.openweathermap.org/data/2.5/weather";
     let apiUrl = `${url}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
@@ -84,5 +85,17 @@ function currentCity(event) {
     getPosition(position);
 }
 
+function showCelciusTemperature(event) {
+    event.preventDefault();
+    let celciusTemperature = Math.round((farenheitValue - 32) * 5 / 9);
+    let tempValue = document.querySelector(".farenheit");
+    tempValue.innerHTML = celciusTemperature;
+}
+
+let farenheitValue = null;
+
 let currentLocation = document.querySelector("#current-location-button");
 currentLocation.addEventListener("submit", currentCity);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", showCelciusTemperature);
