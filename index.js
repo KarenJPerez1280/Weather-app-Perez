@@ -47,9 +47,6 @@ function showTemperature(response) {
     mintemp.innerHTML = `${min}°C`;
     let showIcone = document.querySelector("#sun");
     showIcone.setAttribute = ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-
-
-
 }
 
 
