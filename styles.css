@@ -143,7 +143,7 @@ p {
 .cityName {
     font-size: 50px;
     font-family: "Koulen";
-    margin: 0px 100px;
+    margin: 0px 100px 0px 80px;
 }
 
 .temp {
@@ -154,7 +154,7 @@ p {
 
 .mostly {
     font-size: 37px;
-    margin-left: 90px;
+    margin-left: 105px;
     font-family: "Koulen";
 }
 
@@ -170,10 +170,6 @@ p {
     padding-left: 12px;
 }
 
-span.celcius {
-    font-size: 37px;
-}
-
 .link {
     color: rgba(128, 128, 128, 0.653);
     font-size: 22px;
@@ -181,6 +177,8 @@ span.celcius {
     margin-top: 10px;
 }
 
-span.line {
-    font-size: smaller;
+.temp .farenheit-link {
+    color: black;
+    cursor: default;
+    text-decoration: none;
 }
