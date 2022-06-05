@@ -1,6 +1,7 @@
 .app {
     border: solid;
-    min-width: 1300px;
+    min-width: 900px;
+    max-width: auto;
     margin: 50px 80px 0px;
     border-radius: 12px;
     background-image: url(sunny.jpg);
@@ -15,7 +16,7 @@
 }
 
 .circleOne {
-    width: 220px;
+    min-width: 127px;
     height: 220px;
     border-radius: 50%;
     text-align: center;
@@ -25,40 +26,48 @@
 }
 
 .circleTwo {
-    width: 220px;
+    min-width: 127px;
+    height: 220px;
     height: 220px;
     border-radius: 50%;
     text-align: center;
     background: rgba(112, 159, 239, 0.4);
+    margin-left: 30px;
     margin-top: 0px;
 }
 
 .circleThree {
-    width: 220px;
+    min-width: 127px;
+    height: 220px;
     height: 220px;
     border-radius: 50%;
     text-align: center;
     background: rgba(237, 168, 95, 0.4);
     font-size: 30px;
+    margin-left: 30px;
     margin-top: 0px;
 }
 
 .circleFour {
-    width: 220px;
+    min-width: 127px;
+    height: 220px;
     height: 220px;
     border-radius: 50%;
     text-align: center;
     background: rgba(88, 237, 253, 0.4);
+    margin-left: 30px;
     margin-top: 0px;
 }
 
 .circleFive {
-    width: 220px;
+    min-width: 127px;
+    height: 220px;
     height: 220px;
     border-radius: 50%;
     text-align: center;
     background: rgba(237, 168, 95, 0.4);
     margin-top: 0px;
+    margin-left: 30px;
     margin-right: 40px;
 }
 
@@ -89,6 +98,7 @@ p {
 }
 
 .bigArrow {
+    min-width: auto;
     max-width: max-content;
     margin-left: 80px;
     margin-top: 30px;
@@ -105,7 +115,7 @@ p {
 }
 
 .table {
-    max-width: max-content;
+    min-width: auto;
     margin-bottom: 0px;
     margin-left: 0px;
 }
@@ -148,7 +158,7 @@ p {
 
 .temp {
     font-size: 47px;
-    margin-left: 105px;
+    margin-left: auto;
     font-family: "Koulen";
 }
 
@@ -177,8 +187,20 @@ p {
     margin-top: 10px;
 }
 
-.temp .farenheit-link {
-    color: black;
+.active {
+    color: #212529;
     cursor: default;
     text-decoration: none;
+}
+
+.farenheit-link {
+    text-decoration: none;
+}
+
+.celcius-link {
+    text-decoration: none;
+}
+
+.searchForm {
+    min-width: auto;
 }

@@ -32,6 +32,7 @@ function showTemperature(response) {
     let temp = Math.round(response.data.main.temp);
     let tempFarenheit = document.querySelector(".farenheit");
     tempFarenheit.innerHTML = `${temp}°`;
+    farenheitLink.classList.add("active");
     let description = document.querySelector(".mostly");
     description.innerHTML = response.data.weather[0].description;
     let windspeed = Math.round(response.data.wind.speed);
@@ -87,8 +88,10 @@ function currentCity(event) {
 
 function showCelciusTemperature(event) {
     event.preventDefault();
+    celciusLink.classList.add("active");
+    farenheitLink.classList.remove("active");
 
-    let celciusTemperature = (farenheitValue - 32) * 5 / 9;
+    let celciusTemperature = ((farenheitValue - 32) * 5) / 9;
     let tempValue = document.querySelector("#farenheit");
     tempValue.innerHTML = `${Math.round(celciusTemperature)}° `;
 }
@@ -98,7 +101,6 @@ function showFarenheitTemperature(event) {
     celciusLink.classList.remove("active");
     let tempValue = document.querySelector("#farenheit");
     tempValue.innerHTML = `${Math.round(farenheitValue)}°`;
-
 }
 
 
