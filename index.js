@@ -15,7 +15,7 @@ let day = date.getDay();
 
 let days = [
     "Sunday",
-    "monday",
+    "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
@@ -24,6 +24,15 @@ let days = [
 ];
 
 realTime.innerHTML = `${days[day]}, ${hours}:${minutes}`;
+
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let apiKey = "08638797b25b0ee2dd5b1bbc8fde3b75";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+    console.log(apiUrl);
+    axios.get(apiUrl).then(displayForecast);
+}
+
 
 function showTemperature(response) {
     let h1 = document.querySelector(".cityName");
@@ -49,6 +58,8 @@ function showTemperature(response) {
     mintemp.innerHTML = `${min}°F`;
     let showIcone = document.querySelector("#sun");
     showIcone.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+    getForecast(response.data.coord);
 }
 
 
@@ -103,10 +114,54 @@ function showFarenheitTemperature(event) {
     tempValue.innerHTML = `${Math.round(farenheitValue)}°`;
 }
 
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+    ];
+    return days[day];
+
+}
+
+
+function displayForecast(response) {
+    let forecast = response.data.daily;
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = `<div class="row">`;
+
+    forecast.forEach(function (forecastDay, index) {
+        if (index < 5) {
+            forecastHTML = forecastHTML + `
+        <div class="col circle">
+            <div class="circleOne">
+                <p class="weather-forecast-date">${formatDay(forecastDay.dt)}</p>
+                <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt=clear clas="emoji">
+                </img>
+                <p>
+                    <span class="high"> ${Math.round(forecastDay.temp.max)}°F </span><span class="low"> ${Math.round(forecastDay.temp.min)}°F</span>
+                </p>
+            </div>
+        </div>
+    `;
+        }
+    });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+
+}
 
 
 
 let farenheitValue = null;
+
 
 let currentLocation = document.querySelector("#current-location-button");
 currentLocation.addEventListener("submit", currentCity);

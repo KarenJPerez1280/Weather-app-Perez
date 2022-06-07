@@ -16,7 +16,8 @@
 }
 
 .circleOne {
-    min-width: 127px;
+    min-width: min-content;
+    max-width: max-content;
     height: 220px;
     border-radius: 50%;
     text-align: center;
@@ -76,9 +77,10 @@
     margin-bottom: 0px;
 }
 
-.day {
-    font-size: 30px;
+.weather-forecast-date {
     padding-top: 20px;
+    font-size: 30px;
+
 }
 
 p {
