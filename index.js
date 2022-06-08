@@ -40,7 +40,7 @@ function showTemperature(response) {
     console.log(response.data);
     let temp = Math.round(response.data.main.temp);
     let tempFarenheit = document.querySelector(".farenheit");
-    tempFarenheit.innerHTML = `${temp}°`;
+    tempFarenheit.innerHTML = `${temp}°F`;
     farenheitLink.classList.add("active");
     let description = document.querySelector(".mostly");
     description.innerHTML = response.data.weather[0].description;
@@ -97,34 +97,18 @@ function currentCity(event) {
     getPosition(position);
 }
 
-function showCelciusTemperature(event) {
-    event.preventDefault();
-    celciusLink.classList.add("active");
-    farenheitLink.classList.remove("active");
-
-    let celciusTemperature = ((farenheitValue - 32) * 5) / 9;
-    let tempValue = document.querySelector("#farenheit");
-    tempValue.innerHTML = `${Math.round(celciusTemperature)}° `;
-}
-function showFarenheitTemperature(event) {
-    event.preventDefault();
-    farenheitLink.classList.add("active");
-    celciusLink.classList.remove("active");
-    let tempValue = document.querySelector("#farenheit");
-    tempValue.innerHTML = `${Math.round(farenheitValue)}°`;
-}
 
 function formatDay(timestamp) {
     let date = new Date(timestamp * 1000);
     let day = date.getDay();
     let days = [
-        "Sun",
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat"
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
     ];
     return days[day];
 
@@ -146,7 +130,7 @@ function displayForecast(response) {
                 <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt=clear clas="emoji">
                 </img>
                 <p>
-                    <span class="high"> ${Math.round(forecastDay.temp.max)}°F </span><span class="low"> ${Math.round(forecastDay.temp.min)}°F</span>
+                    <span class="high"> ${Math.round(forecastDay.temp.max)}°F </span><span class="low">${Math.round(forecastDay.temp.min)}°F</span>
                 </p>
             </div>
         </div>
@@ -160,15 +144,9 @@ function displayForecast(response) {
 
 
 
-let farenheitValue = null;
+
 
 
 let currentLocation = document.querySelector("#current-location-button");
 currentLocation.addEventListener("submit", currentCity);
-
-let celciusLink = document.querySelector("#celciusLink");
-celciusLink.addEventListener("click", showCelciusTemperature);
-
-let farenheitLink = document.querySelector("#farenheitLink");
-farenheitLink.addEventListener("click", showFarenheitTemperature);
 

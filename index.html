@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/67a0cf542b.js" crossorigin="anonymous"></script>
     <title>Weather🌎</title>
 </head>
@@ -23,32 +23,32 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-23time">
+                <div class="col-3 time">
                     <h1></h1>
-                    <p id="current-time"> </p>
+                    <p id="current-time" class="hour"> </p>
                 </div>
 
 
-                <div class="col-3 city">
-                    <form id="search-form" class="searchForm">
-                        <p class="cityname"></p>
+                <div class="col-3 city  text-center">
+                    <div style="display:inline-flex;">
+                        <form id="search-form" class="searchForm">
+                            <p class="cityname"></p>
 
-                        <input type="text" placeholder="search for a city" autocomplete="off" autofocus="on"
-                            id="search-input-city" />
+                            <input type="text" style="font-family: FontAwesome;" placeholder='Search for a City...'
+                                autocomplete="off" autofocus="on" id="search-input-city" />
 
-                        <input type="submit" value="Search" id="search-button" />
 
+                            <input type="submit" id="search-button" style="font-family: FontAwesome;" value='&#xf002' />
+
+                        </form>
+                        <form id="current-place">
+                            <input type="submit" style="font-family: FontAwesome;" value='&#xf3c5' autocomplete="off"
+                                autofocus="on" id="current-location-button" />
+
+                        </form>
+
+                    </div>
                 </div>
-                </form>
-
-
-
-                <div class="col-1 location">
-                    <form id="current-place">
-                        <input type="submit" value="current location" placeholder="current location"
-                            id="current-location-button" />
-                </div>
-                </form>
             </div>
 
             <div class="row">
@@ -63,27 +63,25 @@
                     </div>
                 </div>
 
-                <div class="col-5">
-
+                <div class="col-5 text-center">
                     <div class="temp" id="temp">
                         <p class="cityName"> TODAY...</p>
                         <img src="http://openweathermap.org/img/wn/04d@2x.png" alt=clear id="sun"></img><span
-                            class="farenheit" id="farenheit">76°</span><span class="farenValue"><a href=""
-                                id="farenheitLink" class="farenheit-link">F</a></span><span class="line">│</span><span
-                            class="celcius"><a href="" id="celciusLink" class="celcius-link">C</a></span>
-
+                            class="farenheit" id="farenheitLink">76°</span>
                         <p class="mostly"> mostly sunny</p>
                     </div>
 
                 </div>
 
-                <div class="col-3">
+                <div class="col-4">
                     <div class="bigArrow">
-                        <i class="fa-solid fa-arrow-up-long red"></i>
-                        <i class="fa-solid fa-arrow-down-long blue"></i>
+                        <p>
+                            <span class="red"><i class="fa-solid fa-arrow-up-long red"></i></span><span class="blue"> <i
+                                    class="fa-solid fa-arrow-down-long blue"></i></span>
+                        </p>
 
                         <p>
-                            <span class="highOne"> [H] </span><span class="lowOne"> [L]</span>
+                            <span class="highOne">[H] </span><span class="lowOne"> [L]</span>
                         </p>
                     </div>
 
@@ -94,23 +92,24 @@
 
         <div class="weather-forecast" id="forecast">
             <div class="row">
-                <div class="col circle">
+                <div class="col circle mn-30">
                     <div class="circleOne">
                         <p class="weather-forecast-date">Mon</p>
-                        <img src="http://openweathermap.org/img/wn/04d@2x.png" alt=clear clas="emoji">
+                        <img src="http://openweathermap.org/img/wn/04d@2x.png" alt=clear class="emoji">
                         </img>
                         <p>
-                            <span class="high"> [H] </span><span class="low"> [L]</span>
+                            <span class="high"> [H] </span><span class="low">[L]</span>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-        <p>
-            <a href="https://github.com/KarenJPerez1280/Weather-app-Perez" class="link" target="blank">open-source code
-            </a> by Karen Perez
-        </p>
+
     </div>
+    <p class="openSource">
+        <a href="https://github.com/KarenJPerez1280/Weather-app-Perez" class="link" target="blank">open-source code
+        </a> by Karen Perez
+    </p>
     </div>
     <script src="index.js"></script>
 </body>

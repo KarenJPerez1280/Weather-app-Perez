@@ -1,14 +1,15 @@
 .app {
     border: solid;
-    min-width: 900px;
-    max-width: auto;
-    margin: 50px 80px 0px;
+    min-width: fit-content;
+    max-width: 1300px;
+    margin: 50px 80px 10px;
     border-radius: 12px;
-    background-image: url(sunny.jpg);
+    background-image: url(cloud.jpg);
     background-repeat: no-repeat;
     background-position: 0%;
     background-size: cover;
 }
+
 
 .container {
     display: block;
@@ -16,110 +17,69 @@
 }
 
 .circleOne {
-    min-width: min-content;
-    max-width: max-content;
-    height: 220px;
-    border-radius: 50%;
+
+    max-width: 200px;
+    height: 210px;
+    border-radius: 10%;
     text-align: center;
     background: rgba(158, 165, 177, 0.4);
+    padding: 0px auto;
+    margin-left: 0px;
     margin-bottom: 30px;
-    margin-left: 30px;
-}
-
-.circleTwo {
-    min-width: 127px;
-    height: 220px;
-    height: 220px;
-    border-radius: 50%;
-    text-align: center;
-    background: rgba(112, 159, 239, 0.4);
-    margin-left: 30px;
-    margin-top: 0px;
-}
-
-.circleThree {
-    min-width: 127px;
-    height: 220px;
-    height: 220px;
-    border-radius: 50%;
-    text-align: center;
-    background: rgba(237, 168, 95, 0.4);
-    font-size: 30px;
-    margin-left: 30px;
-    margin-top: 0px;
-}
-
-.circleFour {
-    min-width: 127px;
-    height: 220px;
-    height: 220px;
-    border-radius: 50%;
-    text-align: center;
-    background: rgba(88, 237, 253, 0.4);
-    margin-left: 30px;
-    margin-top: 0px;
-}
-
-.circleFive {
-    min-width: 127px;
-    height: 220px;
-    height: 220px;
-    border-radius: 50%;
-    text-align: center;
-    background: rgba(237, 168, 95, 0.4);
-    margin-top: 0px;
-    margin-left: 30px;
-    margin-right: 40px;
-}
-
-.emoji {
-    font-size: 70px;
-    margin-bottom: 0px;
 }
 
 .weather-forecast-date {
     padding-top: 20px;
     font-size: 30px;
-
 }
 
 p {
+    text-transform: uppercase;
     font-size: 22px;
     margin: 0 auto;
-    font-family: "Koulen";
+    font-family: 'Shadows Into Light Two', cursive;
+    font-weight: bold;
+}
+
+.openSource {
+    font-size: 22px;
+    margin-left: 80px;
+    font-family: 'Shadows Into Light Two',
+        cursive;
 }
 
 .high {
-    color: red;
+    color: #fa500a96;
     font-size: 25px;
 }
 
 .low {
-    color: blue;
+    color: #0000ff73;
     font-size: 25px;
 }
 
 .bigArrow {
     min-width: auto;
     max-width: max-content;
-    margin-left: 80px;
+    margin-left: 150px;
     margin-top: 30px;
 }
 
 .red {
     font-size: 90px;
-    color: red;
+    color: #fa500a96;
 }
 
 .blue {
     font-size: 90px;
-    color: blue;
+    color: #0000ff73;
 }
 
 .table {
     min-width: auto;
     margin-bottom: 0px;
     margin-left: 0px;
+    font-weight: bold;
 }
 
 .tableTwo {
@@ -127,8 +87,9 @@ p {
     padding: 20px;
     margin-bottom: 30px;
     margin-left: 20px;
-    font-size: 20px;
-    font-family: "Koulen";
+    font-size: 29px;
+    font-family: 'Shadows Into Light Two',
+        cursive;
 }
 
 .row {
@@ -145,7 +106,7 @@ p {
 }
 
 .city {
-    margin-left: 320px;
+    margin-left: 250px;
 }
 
 .location {
@@ -154,55 +115,74 @@ p {
 
 .cityName {
     font-size: 50px;
-    font-family: "Koulen";
-    margin: 0px 100px 0px 80px;
+
+    font-family: 'Shadows Into Light Two', cursive;
+
 }
 
 .temp {
     font-size: 47px;
-    margin-left: auto;
-    font-family: "Koulen";
+    font-family: 'Shadows Into Light Two',
+        cursive;
 }
 
 .mostly {
     font-size: 37px;
-    margin-left: 105px;
-    font-family: "Koulen";
+
+    font-family: 'Shadows Into Light Two',
+        cursive;
 }
 
 .highOne {
     font-size: 34px;
-    color: red;
-    padding-left: 10px;
+    color: #fa500a96;
+    padding-left: 0px;
 }
 
 .lowOne {
     font-size: 34px;
-    color: blue;
-    padding-left: 12px;
-}
-
-.link {
-    color: rgba(128, 128, 128, 0.653);
-    font-size: 22px;
-    margin-left: 80px;
-    margin-top: 10px;
-}
-
-.active {
-    color: #212529;
-    cursor: default;
-    text-decoration: none;
-}
-
-.farenheit-link {
-    text-decoration: none;
-}
-
-.celcius-link {
-    text-decoration: none;
+    color: #0000ff73;
+    padding-left: 30px;
 }
 
 .searchForm {
-    min-width: auto;
+    font-family: 'Shadows Into Light Two',
+        cursive;
+}
+
+.bigTemp {
+    margin-left: 180px;
+}
+
+.sun {
+    margin-left: -30px;
+}
+
+.hour {
+    margin-left: 30px;
+}
+
+input[type=submit] {
+    background-color: rgba(158, 165, 177, 0.4);
+    border-radius: 50%;
+    border-color: none;
+    color: #fff;
+
+}
+
+input[type=submit]:hover {
+    background-color: #555156f0;
+}
+
+:placeholder-shown {
+    background-color: rgba(158, 165, 177, 0.4);
+    border-color: rgb(10, 10, 10);
+}
+
+
+
+::placeholder {
+    color: rgba(158, 165, 177, 0.4);
+    color: rgb(20, 19, 19);
+    opacity: 1;
 }
